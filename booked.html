@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Confirmation</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #fbc2eb, #a6c1ee);
+      background-size: 400% 400%;
+      animation: backgroundChange 10s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+      text-align: center;
+      overflow: hidden;
+      padding: 20px;
+    }
+
+    /* Container Styling */
+    .confirmation-container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 15px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      padding: 40px;
+      max-width: 700px;
+      width: 100%;
+      text-align: center;
+    }
+
+    /* Header Styling */
+    h1 {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+
+    h2 {
+      color: #2980b9;
+      font-size: 2rem;
+      margin-bottom: 15px;
+    }
+
+    p {
+      color: #555;
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .details {
+      font-size: 1.1rem;
+      margin-top: 10px;
+      color: #444;
+    }
+
+    /* Button Styling */
+    .button {
+      background-color: #3498db;
+      color: #fff;
+      padding: 10px 20px;
+      border-radius: 5px;
+      border: none;
+      text-transform: uppercase;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+      transition: background-color 0.3s, transform 0.3s;
+      text-decoration: none;
+    }
+
+    .button:hover {
+      background-color: #2980b9;
+      transform: translateY(-3px);
+    }
+
+    /* Animation Keyframes */
+    @keyframes backgroundChange {
+      0% { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
+      25% { background: linear-gradient(135deg, #a6c1ee, #c2e9fb); }
+      50% { background: linear-gradient(135deg, #c2e9fb, #fbc2eb); }
+      75% { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
+      100% { background: linear-gradient(135deg, #fbc2eb, #a6c1ee); }
+    }
+  </style>
+</head>
+<body>
+  <div class="confirmation-container">
+    <h1>Booking Confirmed!</h1>
+    <h2>Thank You for Your Reservation</h2>
+    <p>Your booking has been successfully completed. We can't wait to see you!</p>
+    <!-- Updated button with a link to home.html -->
+    <a href="home.html" class="button">Go Back</a>
+  </div>
+</body>
+</html>

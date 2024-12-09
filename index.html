@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turf Booking</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: url('background.png') no-repeat center center/cover;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    /* Container Styling */
+    .container {
+      text-align: center;
+      background: rgba(0, 0, 0, 0.5); /* Transparent background for better visibility */
+      padding: 20px;
+      border-radius: 15px;
+    }
+
+    /* Logo Styling */
+    .logo img {
+      width: 100px; /* Smaller logo size */
+      height: auto;
+      animation: bounce 2s infinite;
+      margin-bottom: 10px;
+    }
+
+    /* Title Styling */
+    .title {
+      color: white;
+      font-size: 2.5rem;
+      margin-top: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+      animation: slideIn 1.5s ease-in-out;
+    }
+
+    /* Animations */
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
+    }
+
+    @keyframes slideIn {
+      from {
+        transform: translateY(50px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  </style>
+  <script>
+    // Redirect to login or signup page after 5 seconds
+    setTimeout(() => {
+      window.location.href = "main.html"; // Replace with your login/signup page URL
+    }, 5000);
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="logo">
+      <img src="logo.png" alt="Turf Booking Logo">
+    </div>
+    <h1 class="title">Welcome to Turf Booking</h1>
+  </div>
+</body>
+</html>

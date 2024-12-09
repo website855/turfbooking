@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #6a11cb, #2575fc);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Form Container */
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 450px;
+    }
+
+    .container h1 {
+      margin-bottom: 25px;
+      color: #333;
+      font-size: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      background: #2575fc;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background: #1d4da8;
+      transform: scale(1.05);
+    }
+
+    .btn-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.3s;
+    }
+
+    .btn-google {
+      background: #db4437;
+    }
+
+    .btn-google:hover {
+      background: #b53128;
+      transform: scale(1.05);
+    }
+
+    .btn-facebook {
+      background: #3b5998;
+    }
+
+    .btn-facebook:hover {
+      background: #2d4373;
+      transform: scale(1.05);
+    }
+
+    .btn-social img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .link {
+      margin-top: 15px;
+      display: block;
+      font-size: 0.95rem;
+      color: #2575fc;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .link:hover {
+      color: #1d4da8;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Login</h1>
+    <form action="home.html" method="GET">
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="submit" class="btn">Login</button>
+    </form>
+    <button class="btn-social btn-google">
+      <img src="google-icon.png" alt="Google Logo">Login with Google
+    </button>
+    <button class="btn-social btn-facebook">
+      <img src="facebook-icon.png" alt="Facebook Logo">Login with Facebook
+    </button>
+    <a href="signup.html" class="link">Don't have an account? Signup</a>
+  </div>
+</body>
+</html>
