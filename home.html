@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - Turf Booking</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      color: #000; /* Set text color to black */
+      background: linear-gradient(135deg, #1e90ff, #32cd32, #ff7f50); /* Gradient background */
+      background-size: 300% 300%;
+      animation: gradientMove 6s infinite;
+      min-height: 100vh;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: linear-gradient(90deg, #32cd32, #1e90ff); /* Mint green to blue gradient */
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background 0.3s ease-in-out;
+    }
+
+    nav:hover {
+      background: linear-gradient(90deg, #1e90ff, #32cd32); /* Reversed gradient on hover */
+    }
+
+    nav .logo {
+      font-size: 1.8rem;
+      color: #fff;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      transition: transform 0.3s;
+    }
+
+    nav .logo:hover {
+      transform: scale(1.1);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav ul li {
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-size: 1rem;
+      padding: 5px 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s, color 0.3s;
+    }
+
+    nav ul li a:hover {
+      background-color: #ff7b7b;
+      color: #fff;
+      transform: scale(1.05);
+    }
+
+    .logout {
+      background-color: #d93d4d;
+      color: #fff;
+      border-radius: 5px;
+      padding: 5px 15px;
+      text-decoration: none;
+      font-size: 1rem;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .logout:hover {
+      background-color: #ff6f61;
+      transform: scale(1.05);
+    }
+
+    /* Header Section */
+    .header {
+      text-align: center;
+      padding: 50px 20px;
+      color: #fff;
+    }
+
+    .header h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    .header p {
+      font-size: 1.2rem;
+    }
+
+    /* Content Section */
+    .content {
+      padding: 40px 20px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      justify-content: center;
+    }
+
+    .content .card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 300px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .content .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .card img {
+      width: 100px;
+      height: 100px;
+      margin-bottom: 15px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #ff7f50;
+      transition: border-color 0.3s;
+    }
+
+    .card:hover img {
+      border-color: #3b5998;
+    }
+
+    .card h3 {
+      margin-bottom: 10px;
+      color: #333;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+
+    .card:hover h3 {
+      color: #3b5998;
+    }
+
+    .card p {
+      color: #555;
+      font-size: 0.95rem;
+      transition: color 0.3s;
+    }
+
+    .card:hover p {
+      color: #333;
+    }
+
+    .card a {
+      display: block;
+      text-decoration: none;
+    }
+
+    .card button {
+      border: none;
+      outline: none;
+      background-color: #ff6f61;
+      color: #fff;
+      border-radius: 5px;
+      padding: 10px 15px;
+      cursor: pointer;
+      font-size: 1rem;
+      margin-top: 10px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .card button:hover {
+      background-color: #d93d4d;
+      transform: scale(1.05);
+    }
+
+    /* Locations Section */
+    .locations {
+      padding: 40px 20px;
+    }
+
+    .locations h2 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #333;
+      font-size: 2rem;
+    }
+
+    .location-card {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin: 20px auto;
+      max-width: 600px;
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .location-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .location-card img {
+      width: 100%;
+      height: 200px;
+      border-radius: 10px;
+      object-fit: cover;
+      margin-bottom: 20px;
+    }
+
+    .location-card h3 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 1.5rem;
+    }
+
+    .location-card p {
+      color: #555;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="logo">Turf & More</div>
+    <ul>
+      <li><a href="trufbook.html">Turf</a></li>
+      <li><a href="gamesbook.html">Games</a></li>
+      <li><a href="birth.html">Celebrations</a></li>
+      <li><a href="signup.html">Sign Up</a></li>
+      <li><a href="login.html">Login</a></li>
+    </ul>
+    <a href="main.html" class="logout">Logout</a>
+  </nav>
+
+  <div class="header">
+    <h1>Welcome to Turf & More</h1>
+    <p>Your destination for turf booking, games, and birthday celebrations!</p>
+  </div>
+
+  <div class="content">
+    <!-- Turf Card -->
+    <div class="card" id="turf">
+      <a href="trufbook.html">
+        <img src="turf.png" alt="Turf">
+        <h3>Turf Booking</h3>
+        <p>Book your favorite turf for football, cricket, and more.</p>
+        <button>Book Now</button>
+      </a>
+    </div>
+
+    <!-- Games Card -->
+    <div class="card" id="games">
+      <a href="gamesbook.html">
+        <img src="games.jpg" alt="Games">
+        <h3>Games</h3>
+        <p>Play various PC games with your friends and family.</p>
+        <button>Play Now</button>
+      </a>
+    </div>
+
+    <!-- Birthday Card -->
+    <div class="card" id="birthday">
+      <a href="birth.html">
+        <img src="bday.jpg" alt="Birthday">
+        <h3>Birthday Celebrations</h3>
+        <p>Plan and celebrate birthdays with customized options.</p>
+        <button>Plan Now</button>
+      </a>
+    </div>
+  </div>
+
+  <div class="locations">
+    <h2>Our Locations</h2>
+
+    <!-- Coimbatore -->
+    <div class="location-card">
+      <img src="cbe.jpg" alt="Coimbatore Turf">
+      <h3>Coimbatore Turf</h3>
+      <p>Nestled in the peaceful surroundings of Coimbatore, this turf provides a calm environment for sports lovers. Perfect for both casual games and professional tournaments.</p>
+    </div>
+
+    <!-- Dindigul -->
+    <div class="location-card">
+      <img src="dng.jpg" alt="Dindigul Turf">
+      <h3>Dindigul Turf</h3>
+      <p>Known for its lush greenery and scenic beauty, Dindigul Turf combines sports with nature. Experience high-quality facilities in a relaxing atmosphere.</p>
+    </div>
+
+    <!-- Madurai -->
+    <div class="location-card">
+      <img src="madurai.jpg" alt="Madurai Turf">
+      <h3>Madurai Turf</h3>
+      <p>Set in the historic city of Madurai, this turf is a favorite spot for sports enthusiasts. Play your game while immersing yourself in the rich culture of this vibrant city.</p>
+    </div>
+  </div>
+</body>
+</html>

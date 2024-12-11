@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turf Booking</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #e0eafc, #cfdef3);
+      background-size: 400% 400%;
+      animation: backgroundChange 15s linear infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+      overflow: hidden;
+    }
+
+    /* Form Container */
+    .form-container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      width: 600px;
+      max-height: 90vh;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      animation: slideUp 1s ease-out;
+    }
+
+    .form-container img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .form-container h2 {
+      color: #2c3e50;
+      margin-bottom: 10px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .form-container p {
+      color: #555;
+      margin-bottom: 10px;
+      font-size: 1rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Two-Column Layout */
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+    }
+
+    .form-grid input, .form-grid select {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-grid input:focus, .form-grid select:focus {
+      border-color: #3498db;
+      box-shadow: 0 0 5px #3498db;
+    }
+
+    /* Form Button */
+    .form-container button {
+      background-color: #3498db;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 5px;
+      transition: background-color 0.3s, transform 0.3s;
+      width: 100%;
+    }
+
+    .form-container button:hover {
+      background-color: #2980b9;
+      transform: translateY(-3px);
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes backgroundChange {
+      0% { background: linear-gradient(135deg, #e0eafc, #cfdef3); }
+      25% { background: linear-gradient(135deg, #cfdef3, #a2c2e1); }
+      50% { background: linear-gradient(135deg, #a2c2e1, #7a9abf); }
+      75% { background: linear-gradient(135deg, #7a9abf, #e0eafc); }
+      100% { background: linear-gradient(135deg, #e0eafc, #cfdef3); }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <img src="map.png" alt="Turf Booking Image">
+    <h2>Turf Booking Form</h2>
+    <p>Reserve your favorite turf for an exciting game of football, cricket, or any other sport. Fill in the details below to book your slot!</p>
+    <!-- Updated form with action attribute pointing to booked.html -->
+    <form action="booked.html" method="post">
+      <div class="form-grid">
+        <!-- User Details -->
+        <input type="text" placeholder="Name" required>
+        <input type="tel" placeholder="Mobile Number" required>
+        <input type="email" placeholder="Email" required>
+
+        <!-- Booking Details -->
+        <input type="text" placeholder="Enter Location" required>
+        <input type="date" required>
+        <input type="time" required>
+        <select required>
+          <option value="" disabled selected>Select Total Timing</option>
+          <option value="1">1 Hour</option>
+          <option value="2">2 Hours</option>
+          <option value="3">3 Hours</option>
+          <option value="4">4 Hours</option>
+          <option value="5">5 Hours</option>
+        </select>
+      </div>
+      <button type="submit">Book Now</button>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Signup</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #ff6a00, #ee0979);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    /* Form Container */
+    .container {
+      background: rgba(255, 255, 255, 0.95);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      width: 90%;
+      max-width: 450px;
+    }
+
+    .container h1 {
+      margin-bottom: 25px;
+      color: #333;
+      font-size: 2rem;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    .form-group input {
+      width: 100%;
+      padding: 12px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .btn {
+      background: #ff7f50;
+      color: white;
+      padding: 12px 25px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      font-size: 1.1rem;
+      margin-top: 10px;
+      transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .btn:hover {
+      background: #e6613a;
+      transform: scale(1.05);
+    }
+
+    .btn-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px;
+      margin-top: 15px;
+      font-size: 1.1rem;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      width: 100%;
+      transition: transform 0.3s;
+    }
+
+    .btn-google {
+      background: #db4437;
+    }
+
+    .btn-google:hover {
+      background: #b53128;
+      transform: scale(1.05);
+    }
+
+    .btn-facebook {
+      background: #3b5998;
+    }
+
+    .btn-facebook:hover {
+      background: #2d4373;
+      transform: scale(1.05);
+    }
+
+    .btn-social img {
+      width: 24px;
+      height: 24px;
+    }
+
+    .link {
+      margin-top: 15px;
+      display: block;
+      font-size: 0.95rem;
+      color: #ff7f50;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .link:hover {
+      color: #e6613a;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Signup</h1>
+    <form id="signupForm">
+      <div class="form-group">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+      </div>
+      <button type="button" class="btn" onclick="redirectToLogin()">Signup</button>
+    </form>
+    <button class="btn-social btn-google">
+      <img src="google-icon.png" alt="Google Logo">Signup with Google
+    </button>
+    <button class="btn-social btn-facebook">
+      <img src="facebook-icon.png" alt="Facebook Logo">Signup with Facebook
+    </button>
+    <a href="login.html" class="link">Already have an account? Login</a>
+  </div>
+
+  <script>
+    function redirectToLogin() {
+      // Logic to handle the signup process (e.g., form validation) can be added here if needed
+      window.location.href = 'login.html';
+    }
+  </script>
+</body>
+</html>

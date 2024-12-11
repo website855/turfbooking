@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Celebration Booking</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body, html {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb);
+      background-size: 400% 400%; /* Large size for smoother animation */
+      animation: gradientBG 15s ease infinite;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+      overflow-y: auto; /* Allow scrolling */
+      position: relative;
+    }
+
+    /* Form Container */
+    .form-container {
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      padding: 40px;
+      width: 600px;
+      max-height: 90vh; /* Add max-height to ensure content can scroll */
+      overflow-y: auto; /* Allow content to scroll */
+      animation: slideUp 1s ease-out;
+    }
+
+    .form-container img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .form-container h2 {
+      color: #2c3e50;
+      margin-bottom: 20px;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    .form-container p {
+      color: #555;
+      margin-bottom: 20px;
+      font-size: 1rem;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    /* Two Column Layout */
+    .form-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+
+    .form-content input, .form-content select, .form-content textarea, .form-content button {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+      outline: none;
+      transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-content input:focus, .form-content select:focus, .form-content textarea:focus, .form-content button:hover {
+      border-color: #e91e63;
+      box-shadow: 0 0 5px #e91e63;
+    }
+
+    .form-content button {
+      background-color: #e91e63;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.3s;
+      grid-column: span 2;
+    }
+
+    .form-content button:hover {
+      background-color: #d81b60;
+      transform: translateY(-3px);
+    }
+
+    /* Animation Keyframes */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    @keyframes slideUp {
+      from {
+        transform: translateY(20px);
+        opacity: 0;
+      }
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+
+    @keyframes gradientBG {
+      0% {
+        background-position: 0% 50%;
+        background-color: #ff9a9e;
+      }
+      25% {
+        background-position: 50% 50%;
+        background-color: #fad0c4;
+      }
+      50% {
+        background-position: 100% 50%;
+        background-color: #fbc2eb;
+      }
+      75% {
+        background-position: 50% 50%;
+        background-color: #a18cd1;
+      }
+      100% {
+        background-position: 0% 50%;
+        background-color: #ffdde1;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-container">
+    <img src="bday.jpg" alt="Birthday Celebration Image">
+    <h2>Birthday Celebration Booking</h2>
+    <p>Plan an unforgettable birthday celebration with us! Fill out the details below to book your party.</p>
+    <form action="booked.html" method="post">
+      <div class="form-content">
+        <!-- Left Column -->
+        <input type="text" placeholder="Name" required>
+        <input type="tel" placeholder="Mobile Number" required>
+        <input type="email" placeholder="Email" required>
+        <input type="date" required>
+        <input type="time" required>
+        
+        <!-- Right Column -->
+        <input type="text" placeholder="Location" required>
+        <input type="number" placeholder="Total People Count" required min="1">
+        <input type="text" placeholder="Food Count (e.g., 10, 20, 30, etc.)" required>
+        
+        <button type="submit">Book Now</button>
+      </div>
+    </form>
+  </div>
+</body>
+</html>

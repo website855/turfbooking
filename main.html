@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login or Signup</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Body Styling */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(135deg, #1e90ff, #32cd32, #ff7f50);
+      background-size: 300% 300%;
+      font-family: Arial, sans-serif;
+      animation: gradientMove 6s infinite;
+    }
+
+    @keyframes gradientMove {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    /* Container Styling */
+    .container {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 40px;
+      border-radius: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      width: 90%;
+      max-width: 400px;
+    }
+
+    /* Heading Styling */
+    h1 {
+      font-size: 2rem;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Button Styling */
+    .btn {
+      display: block;
+      width: 100%;
+      padding: 15px;
+      margin: 10px 0;
+      font-size: 1rem;
+      color: #fff;
+      background: #1e90ff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 300%;
+      height: 300%;
+      background: rgba(255, 255, 255, 0.2);
+      transform: translate(-50%, -50%) rotate(45deg);
+      transition: transform 0.5s ease;
+      z-index: -1;
+    }
+
+    .btn:hover::before {
+      transform: translate(50%, 50%) rotate(45deg);
+    }
+
+    .btn:hover {
+      transform: scale(1.05);
+    }
+
+    .btn.signup {
+      background: #32cd32;
+    }
+
+    .btn.signup:hover {
+      background: #28a428;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to Turf Booking</h1>
+    <button class="btn login" onclick="window.location.href='login.html'">Login</button>
+    <button class="btn signup" onclick="window.location.href='signup.html'">Signup</button>
+  </div>
+</body>
+</html>
